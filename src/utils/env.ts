@@ -1,1 +1,1 @@
-export const basename = import.meta.env.MODE === "development" ? "/" : "/p5js";
+export const basename = import.meta.env.MODE === "development" ? "/" : "/";
