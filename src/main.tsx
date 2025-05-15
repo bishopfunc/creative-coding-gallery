@@ -6,7 +6,7 @@ import SketchB from "./components/SketchB";
 import {basename} from "./utils/env"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <BrowserRouter basename={basename}>
+  <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/sketchA" element={<SketchA />} />
