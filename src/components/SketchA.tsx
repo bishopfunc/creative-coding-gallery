@@ -1,5 +1,4 @@
 // components/SketchA.tsx
-import React from "react";
 import { ReactP5Wrapper } from "react-p5-wrapper";
 import { sketchA } from "../sketches/sketchA";
 
