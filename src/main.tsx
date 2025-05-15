@@ -3,9 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import SketchA from "./components/SketchA";
 import SketchB from "./components/SketchB";
+import {basename} from "./utils/env"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <BrowserRouter>
+  <BrowserRouter basename={basename}>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/sketchA" element={<SketchA />} />
@@ -13,3 +14,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     </Routes>
   </BrowserRouter>
 );
+
+

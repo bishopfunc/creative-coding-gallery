@@ -1,8 +1,9 @@
 // App.tsx
+import {basename} from "./utils/env"
 
 const sketchPages = [
-  { title: "Sketch A", path: "/sketchA" },
-  { title: "Sketch B", path: "/sketchB" },
+  { title: "Sketch A", path: `${basename}/sketchA`},
+  { title: "Sketch B", path: `${basename}/sketchB`},
 ];
 
 const App = () => {
