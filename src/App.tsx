@@ -13,7 +13,7 @@ const App = () => {
           <Card key={index}>
             <CardHeader>
               <CardTitle>
-                <Link to={page.pagePath} className="text-lg hover:underline">
+                <Link to={page.pagePath || ""} className="text-lg hover:underline">
                   {page.title}
                 </Link>
               </CardTitle>
