@@ -3,6 +3,8 @@ import { useRef } from "react";
 import type p5 from "p5";
 import type { SketchFunc } from "../utils/types";
 import type { Sketch } from "react-p5-wrapper";
+import { Button } from "@/components/ui/button"
+
 type Props = {
   title: string;
   fileName: string;
@@ -33,8 +35,8 @@ const SketchPageWrapper = ({ title, sketchFunc, fileName }: Props) => {
       <div id="main" style={{ border: "1px solid #ccc", borderRadius: "8px" }}>
         <ReactP5Wrapper sketch={wrappedSketch} />
       </div>
-      <div>
-        <button onClick={handleSavePNG} style={{ marginTop: "1rem" }}>Save PNG</button>
+      <div className="flex flex-col items-center justify-center min-h-svh">
+        <Button onClick={handleSavePNG} style={{ marginTop: "1rem" }}>Save PNG</Button>
         {/* <button onClick>Save GIF</button> */}
       </div>
     </div>
