@@ -3,7 +3,7 @@ import type { SketchFunc } from "../utils/types";
 
 export const sketchA: SketchFunc = (p: p5) => {
   p.setup = () => {
-    p.createCanvas(300, 200);
+    p.createCanvas(500, 500);
     p.background(255);
   };
   
