@@ -1,27 +1,35 @@
 import { Link } from "react-router-dom";
 import { useSketchPages } from "./SketchPageContext";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 const App = () => {
   const sketchPages = useSketchPages();
 
   return (
-    <div style={{ padding: "1rem" }}>
-      <h1>Creative Coding Gallery</h1>
-      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+    <div className="p-6 space-y-6">
+      <h1 className="text-3xl font-bold">Creative Coding Gallery</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sketchPages.map((page, index) => (
-          <div key={index}>
-            <Link to={`${page.pagePath}`} style={{ fontSize: "1.2rem" }}>
-              {page.title}
-            </Link>
+          <Card key={index}>
+            <CardHeader>
+              <CardTitle>
+                <Link to={page.pagePath} className="text-lg hover:underline">
+                  {page.title}
+                </Link>
+              </CardTitle>
+            </CardHeader>
             {page.imagePath && (
-              <img
-                width={200}
-                height={200}
-                src={page.imagePath}
-                alt={page.title}
-              />
+              <CardContent className="flex justify-center items-center">
+                <img
+                  className="rounded-lg object-cover"
+                  src={page.imagePath}
+                  alt={page.title}
+                  width={200}
+                  height={200}
+                />
+              </CardContent>
             )}
-          </div>
+          </Card>
         ))}
       </div>
     </div>
