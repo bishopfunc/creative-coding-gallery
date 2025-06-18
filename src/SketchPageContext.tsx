@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { sketchA } from "./sketches/sketchA";
 import { sketchB } from "./sketches/sketchB";
+import { pointAndNoise } from "./sketches/pointAndNoise";
+import { ellipse } from "./sketches/ellipse";
 import SketchPageWrapper from "./components/SketchPageWrapper";
 import type { JSX } from "react";
 import type { SketchFunc } from "./utils/types";
@@ -37,6 +39,8 @@ const findValidImagePath = async (fileName: string): Promise<string> => {
 const baseSketchPages: Omit<SketchPage, "pagePath" | "element" | "imagePath">[] = [
   { title: "Sketch A", fileName: "sketchA", sketchFunc: sketchA },
   { title: "Sketch B", fileName: "sketchB", sketchFunc: sketchB },
+  { title: "Point and Noise", fileName: "pointAndNoise", sketchFunc: pointAndNoise },
+  { title: "Ellipse", fileName: "ellipse", sketchFunc: ellipse },
 ];
 
 export const SketchPageProvider = ({ children }: { children: JSX.Element }) => {
